@@ -8,18 +8,17 @@
       </ul>
     </div>
   </template>
-  
+
 <script>
 export default {
-  data() {
+  data () {
     return {
-    topScores: [] // Placeholder for top scores data
+      topScores: [] // Placeholder for top scores data
     }
   },
-  mounted() {
+  mounted () {
     // Fetch leaderboard data from API or retrieve from local storage
     // Update the topScores array with the fetched data
   }
 }
 </script>
-  

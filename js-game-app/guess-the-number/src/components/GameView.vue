@@ -8,14 +8,14 @@
       <!-- <span class="timer">You have {{ formatTime(timeRemaining) }} left</span> -->
       <p v-if="message" class="game-message">{{ message }}</p>
       <div class="game-container">
-          <p>Level: {{ level }}</p>
-          <p>Tries: {{ tries }}/{{ maxTries }}</p>
+          <p class="game-level">Level: {{ level }}</p>
+          <p class="game-tries">Tries: {{ tries }}/{{ maxTries }}</p>
       </div>
       <form @submit.prevent="checkGuess">
-        <input type="number" v-model="guess" required autofocus>
-        <button type="submit">Submit</button>
+        <input type="number" v-model="guess" required autofocus class="game-input">
+        <button type="submit" class="game-button">Submit</button>
       </form>
-      <button @click="resetGame">Reset</button>
+      <button @click="resetGame" class="game-button game-button-reset">Reset</button>
     </div>
   </div>
 </template>
@@ -109,6 +109,7 @@ export default {
 
 <style scoped>
 .game {
+  position: relative;
   text-align: center;
   margin-top: 100px;
   background-image: url('@/assets/Untitled.png'); /* Replace 'background-image.jpg' with your actual image file name and extension */
@@ -130,9 +131,37 @@ export default {
 }
 
 .game-message {
-  font-size: 20px;
+  font-size: 30px;
   color: #ff4d4d;
   margin-bottom: 20px;
+}
+
+.game-level,
+.game-tries {
+  font-size: 28px;
+  color: #000000;
+}
+
+.game-button,
+.game-button-reset {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.game-button-reset {
+  background-color: #ff4d4d;
+}
+.game-input {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  background-color: #fff;
+  color: #410eb8;
+  margin-bottom: 10px;
 }
 
 .game img {
