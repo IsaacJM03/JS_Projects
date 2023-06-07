@@ -31,7 +31,7 @@ export default {
       guess: null,
       message: null,
       score: 0,
-      level: 1,
+      level: 0,
       tries: 0,
       maxTries: 10 // Adjust the maximum number of tries based on the level      timeLimit: 15, // Set the time limit for each level (in seconds)
     //   timeLimit: 30, // Set the time limit for each level (in seconds)
@@ -47,8 +47,6 @@ export default {
       this.targetNumber = Math.floor(Math.random() * 10) + 1
       this.level++ // Increment the level
       this.tries = 0 // Reset the number of tries
-    //   this.timeRemaining = this.timeLimit // Reset the time remaining
-    //   this.startTimer() // Start the timer for the new level
     },
     checkGuess () {
       this.score++
